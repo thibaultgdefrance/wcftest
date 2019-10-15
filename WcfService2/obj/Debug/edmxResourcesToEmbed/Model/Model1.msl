@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EarthRescueModelStoreContainer" CdmEntityContainer="EarthRescueEntities">
+    <EntitySetMapping Name="Actions">
+      <EntityTypeMapping TypeName="EarthRescueModel.Actions">
+        <MappingFragment StoreEntitySet="Actions">
+          <ScalarProperty Name="idAction" ColumnName="idAction" />
+          <ScalarProperty Name="nomAction" ColumnName="nomAction" />
+          <ScalarProperty Name="idMusic" ColumnName="idMusic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aeronef">
+      <EntityTypeMapping TypeName="EarthRescueModel.Aeronef">
+        <MappingFragment StoreEntitySet="Aeronef">
+          <ScalarProperty Name="idAeronef" ColumnName="idAeronef" />
+          <ScalarProperty Name="idTypeAeronef" ColumnName="idTypeAeronef" />
+          <ScalarProperty Name="poidsCargaison" ColumnName="poidsCargaison" />
+          <ScalarProperty Name="integriteBlindage" ColumnName="integriteBlindage" />
+          <ScalarProperty Name="jaugeCarburant" ColumnName="jaugeCarburant" />
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="vitesse" ColumnName="vitesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ennemi">
+      <EntityTypeMapping TypeName="EarthRescueModel.Ennemi">
+        <MappingFragment StoreEntitySet="Ennemi">
+          <ScalarProperty Name="idEnnemi" ColumnName="idEnnemi" />
+          <ScalarProperty Name="nomEnnemi" ColumnName="nomEnnemi" />
+          <ScalarProperty Name="statutEnnemi" ColumnName="statutEnnemi" />
+          <ScalarProperty Name="idTypeEnnemi" ColumnName="idTypeEnnemi" />
+          <ScalarProperty Name="integriteBlindageEnnemi" ColumnName="integriteBlindageEnnemi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Environnement">
+      <EntityTypeMapping TypeName="EarthRescueModel.Environnement">
+        <MappingFragment StoreEntitySet="Environnement">
+          <ScalarProperty Name="idEnvironnement" ColumnName="idEnvironnement" />
+          <ScalarProperty Name="idTypeEnvironnement" ColumnName="idTypeEnvironnement" />
+          <ScalarProperty Name="idNiveauEnvironnement" ColumnName="idNiveauEnvironnement" />
+          <ScalarProperty Name="idMusic" ColumnName="idMusic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnvironnementRessource">
+      <EntityTypeMapping TypeName="EarthRescueModel.EnvironnementRessource">
+        <MappingFragment StoreEntitySet="EnvironnementRessource">
+          <ScalarProperty Name="idEnvironnementRessource" ColumnName="idEnvironnementRessource" />
+          <ScalarProperty Name="idEnvironnement" ColumnName="idEnvironnement" />
+          <ScalarProperty Name="idTypeRessource" ColumnName="idTypeRessource" />
+          <ScalarProperty Name="quantiteRessource" ColumnName="quantiteRessource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inventaire">
+      <EntityTypeMapping TypeName="EarthRescueModel.Inventaire">
+        <MappingFragment StoreEntitySet="Inventaire">
+          <ScalarProperty Name="idInventaire" ColumnName="idInventaire" />
+          <ScalarProperty Name="quantite" ColumnName="quantite" />
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="idRessource" ColumnName="idRessource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Joueur">
+      <EntityTypeMapping TypeName="EarthRescueModel.Joueur">
+        <MappingFragment StoreEntitySet="Joueur">
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="pseudoJoueur" ColumnName="pseudoJoueur" />
+          <ScalarProperty Name="emailJoueur" ColumnName="emailJoueur" />
+          <ScalarProperty Name="pwdJoueur" ColumnName="pwdJoueur" />
+          <ScalarProperty Name="idNiveauJoueur" ColumnName="idNiveauJoueur" />
+          <ScalarProperty Name="idParametre" ColumnName="idParametre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Messagerie">
+      <EntityTypeMapping TypeName="EarthRescueModel.Messagerie">
+        <MappingFragment StoreEntitySet="Messagerie">
+          <ScalarProperty Name="idMessagerie" ColumnName="idMessagerie" />
+          <ScalarProperty Name="typeMessagerie" ColumnName="typeMessagerie" />
+          <ScalarProperty Name="textMessagerie" ColumnName="textMessagerie" />
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="idEnvironnement" ColumnName="idEnvironnement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Music">
+      <EntityTypeMapping TypeName="EarthRescueModel.Music">
+        <MappingFragment StoreEntitySet="Music">
+          <ScalarProperty Name="idMusic" ColumnName="idMusic" />
+          <ScalarProperty Name="cheminMusic" ColumnName="cheminMusic" />
+          <ScalarProperty Name="idTypeMusic" ColumnName="idTypeMusic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NiveauEnvironnement">
+      <EntityTypeMapping TypeName="EarthRescueModel.NiveauEnvironnement">
+        <MappingFragment StoreEntitySet="NiveauEnvironnement">
+          <ScalarProperty Name="idNiveauEnvironnement" ColumnName="idNiveauEnvironnement" />
+          <ScalarProperty Name="nomNiveauEnvironnement" ColumnName="nomNiveauEnvironnement" />
+          <ScalarProperty Name="model3Dreconstruction" ColumnName="model3Dreconstruction" />
+          <ScalarProperty Name="niveauEnnemis" ColumnName="niveauEnnemis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NiveauJoueur">
+      <EntityTypeMapping TypeName="EarthRescueModel.NiveauJoueur">
+        <MappingFragment StoreEntitySet="NiveauJoueur">
+          <ScalarProperty Name="idNiveauJoueur" ColumnName="idNiveauJoueur" />
+          <ScalarProperty Name="gradNiveauJoueur" ColumnName="gradNiveauJoueur" />
+          <ScalarProperty Name="numNiveauJoueur" ColumnName="numNiveauJoueur" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Objectif">
+      <EntityTypeMapping TypeName="EarthRescueModel.Objectif">
+        <MappingFragment StoreEntitySet="Objectif">
+          <ScalarProperty Name="idObjectif" ColumnName="idObjectif" />
+          <ScalarProperty Name="nomObjectif" ColumnName="nomObjectif" />
+          <ScalarProperty Name="texteObjectif" ColumnName="texteObjectif" />
+          <ScalarProperty Name="niveauObjectif" ColumnName="niveauObjectif" />
+          <ScalarProperty Name="ordreObjectif" ColumnName="ordreObjectif" />
+          <ScalarProperty Name="IdTypeEnnemi" ColumnName="IdTypeEnnemi" />
+          <ScalarProperty Name="IdTypeRessource" ColumnName="IdTypeRessource" />
+          <ScalarProperty Name="Quantite" ColumnName="Quantite" />
+          <ScalarProperty Name="IdEnvironnement" ColumnName="IdEnvironnement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametre">
+      <EntityTypeMapping TypeName="EarthRescueModel.Parametre">
+        <MappingFragment StoreEntitySet="Parametre">
+          <ScalarProperty Name="idParametre" ColumnName="idParametre" />
+          <ScalarProperty Name="controleParametre" ColumnName="controleParametre" />
+          <ScalarProperty Name="niveauMusicParametre" ColumnName="niveauMusicParametre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParametreJoueur">
+      <EntityTypeMapping TypeName="EarthRescueModel.ParametreJoueur">
+        <MappingFragment StoreEntitySet="ParametreJoueur">
+          <ScalarProperty Name="idParametreJoueur" ColumnName="idParametreJoueur" />
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="idParametre" ColumnName="idParametre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Partie">
+      <EntityTypeMapping TypeName="EarthRescueModel.Partie">
+        <MappingFragment StoreEntitySet="Partie">
+          <ScalarProperty Name="idPartie" ColumnName="idPartie" />
+          <ScalarProperty Name="derniereVisitePartie" ColumnName="derniereVisitePartie" />
+          <ScalarProperty Name="positionPartie" ColumnName="positionPartie" />
+          <ScalarProperty Name="enligne" ColumnName="enligne" />
+          <ScalarProperty Name="idJoueur" ColumnName="idJoueur" />
+          <ScalarProperty Name="idEnvironnement" ColumnName="idEnvironnement" />
+          <ScalarProperty Name="idObjectif" ColumnName="idObjectif" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ressource">
+      <EntityTypeMapping TypeName="EarthRescueModel.Ressource">
+        <MappingFragment StoreEntitySet="Ressource">
+          <ScalarProperty Name="idRessource" ColumnName="idRessource" />
+          <ScalarProperty Name="nomRessource" ColumnName="nomRessource" />
+          <ScalarProperty Name="quantiteRessource" ColumnName="quantiteRessource" />
+          <ScalarProperty Name="idTypeRessource" ColumnName="idTypeRessource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpawnEnnemi">
+      <EntityTypeMapping TypeName="EarthRescueModel.SpawnEnnemi">
+        <MappingFragment StoreEntitySet="SpawnEnnemi">
+          <ScalarProperty Name="idSpawnEnnemi" ColumnName="idSpawnEnnemi" />
+          <ScalarProperty Name="idTypeEnvironnement" ColumnName="idTypeEnvironnement" />
+          <ScalarProperty Name="idTypeEnnemi" ColumnName="idTypeEnnemi" />
+          <ScalarProperty Name="nbreEnnemis" ColumnName="nbreEnnemis" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeAeronef">
+      <EntityTypeMapping TypeName="EarthRescueModel.TypeAeronef">
+        <MappingFragment StoreEntitySet="TypeAeronef">
+          <ScalarProperty Name="idTypeAeronef" ColumnName="idTypeAeronef" />
+          <ScalarProperty Name="nomTypeAeronef" ColumnName="nomTypeAeronef" />
+          <ScalarProperty Name="degatsLasersAeronef" ColumnName="degatsLasersAeronef" />
+          <ScalarProperty Name="cargaisonMaxAeronef" ColumnName="cargaisonMaxAeronef" />
+          <ScalarProperty Name="prixAeronef" ColumnName="prixAeronef" />
+          <ScalarProperty Name="blindageMaxAeronef" ColumnName="blindageMaxAeronef" />
+          <ScalarProperty Name="capaciteCarburantMax" ColumnName="capaciteCarburantMax" />
+          <ScalarProperty Name="model3dAeronef" ColumnName="model3dAeronef" />
+          <ScalarProperty Name="sonAeronef" ColumnName="sonAeronef" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeEnnemi">
+      <EntityTypeMapping TypeName="EarthRescueModel.TypeEnnemi">
+        <MappingFragment StoreEntitySet="TypeEnnemi">
+          <ScalarProperty Name="idTypeEnnemi" ColumnName="idTypeEnnemi" />
+          <ScalarProperty Name="nomTypeEnnemi" ColumnName="nomTypeEnnemi" />
+          <ScalarProperty Name="vieMaxEnnemi" ColumnName="vieMaxEnnemi" />
+          <ScalarProperty Name="puissanceTypeEnnemi" ColumnName="puissanceTypeEnnemi" />
+          <ScalarProperty Name="vitesseTypeEnnemi" ColumnName="vitesseTypeEnnemi" />
+          <ScalarProperty Name="idTypeEnvironnement" ColumnName="idTypeEnvironnement" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeEnvironnement">
+      <EntityTypeMapping TypeName="EarthRescueModel.TypeEnvironnement">
+        <MappingFragment StoreEntitySet="TypeEnvironnement">
+          <ScalarProperty Name="idTypeEnvironnement" ColumnName="idTypeEnvironnement" />
+          <ScalarProperty Name="nomTypeEnvironnement" ColumnName="nomTypeEnvironnement" />
+          <ScalarProperty Name="solTypeEnvironnement" ColumnName="solTypeEnvironnement" />
+          <ScalarProperty Name="cielTypeEnvironnement" ColumnName="cielTypeEnvironnement" />
+          <ScalarProperty Name="model3DEnvironnement" ColumnName="model3DEnvironnement" />
+          <ScalarProperty Name="idAmbianceSonore" ColumnName="idAmbianceSonore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeMusic">
+      <EntityTypeMapping TypeName="EarthRescueModel.TypeMusic">
+        <MappingFragment StoreEntitySet="TypeMusic">
+          <ScalarProperty Name="idTypeMusic" ColumnName="idTypeMusic" />
+          <ScalarProperty Name="nomTypeMusic" ColumnName="nomTypeMusic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeRessource">
+      <EntityTypeMapping TypeName="EarthRescueModel.TypeRessource">
+        <MappingFragment StoreEntitySet="TypeRessource">
+          <ScalarProperty Name="idTypeRessource" ColumnName="idTypeRessource" />
+          <ScalarProperty Name="nomTypeRessource" ColumnName="nomTypeRessource" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

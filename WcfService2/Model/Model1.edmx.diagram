@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="61706b686767433e8572123c358f7dd3" Name="Diagram1">
+        <EntityTypeShape EntityType="EarthRescueModel.Actions" Width="1.5" PointX="3" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Aeronef" Width="1.5" PointX="5.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Ennemi" Width="1.5" PointX="3" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Environnement" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.EnvironnementRessource" Width="1.5" PointX="5.25" PointY="22" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Inventaire" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Joueur" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Messagerie" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Music" Width="1.5" PointX="0.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.NiveauEnvironnement" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.NiveauJoueur" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Objectif" Width="1.5" PointX="3" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Parametre" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.ParametreJoueur" Width="1.5" PointX="8.25" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Partie" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.Ressource" Width="1.5" PointX="6" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.SpawnEnnemi" Width="1.5" PointX="6" PointY="25.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.TypeAeronef" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.TypeEnnemi" Width="1.5" PointX="0.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.TypeEnvironnement" Width="1.5" PointX="0.75" PointY="21.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.TypeMusic" Width="1.5" PointX="1.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EarthRescueModel.TypeRessource" Width="1.5" PointX="0.75" PointY="29.25" IsExpanded="true" />
+        <AssociationConnector Association="EarthRescueModel.FK__Action__idMusic__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Aeronef__idJoueu__47A6A41B" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Aeronef__idTypeA__4F47C5E3" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Ennemi__idTypeEn__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Environne__idEnv__282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Environne__idMus__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Environne__idNiv__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Environne__idTyp__693CA210" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Messageri__idEnv__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Objectif__IdEnvi__65370702" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Partie__idEnviro__46B27FE2" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Environne__idTyp__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Inventair__idJou__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Inventair__idRes__5224328E" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Joueur__idNiveau__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Joueur__idParame__3D2915A8" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Messageri__idJou__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Parametre__idJou__41EDCAC5" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Partie__idJoueur__45BE5BA9" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Music__idTypeMus__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__TypeEnvir__idAmb__25518C17" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Objectif__IdType__625A9A57" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Objectif__IdType__634EBE90" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Partie__idObject__662B2B3B" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Parametre__idPar__42E1EEFE" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__Ressource__idTyp__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__SpawnEnne__idTyp__3B40CD36" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__SpawnEnne__idTyp__3C34F16F" ManuallyRouted="false" />
+        <AssociationConnector Association="EarthRescueModel.FK__TypeEnnem__idTyp__756D6ECB" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

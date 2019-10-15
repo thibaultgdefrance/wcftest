@@ -1,0 +1,704 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EarthRescueModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actions">
+    <Key>
+      <PropertyRef Name="idAction" />
+    </Key>
+    <Property Name="idAction" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomAction" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idMusic" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Aeronef">
+    <Key>
+      <PropertyRef Name="idAeronef" />
+    </Key>
+    <Property Name="idAeronef" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTypeAeronef" Type="int" Nullable="false" />
+    <Property Name="poidsCargaison" Type="int" />
+    <Property Name="integriteBlindage" Type="int" />
+    <Property Name="jaugeCarburant" Type="int" />
+    <Property Name="idJoueur" Type="int" />
+    <Property Name="vitesse" Type="int" />
+  </EntityType>
+  <EntityType Name="Ennemi">
+    <Key>
+      <PropertyRef Name="idEnnemi" />
+    </Key>
+    <Property Name="idEnnemi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomEnnemi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="statutEnnemi" Type="tinyint" Nullable="false" />
+    <Property Name="idTypeEnnemi" Type="int" Nullable="false" />
+    <Property Name="integriteBlindageEnnemi" Type="int" />
+  </EntityType>
+  <EntityType Name="Environnement">
+    <Key>
+      <PropertyRef Name="idEnvironnement" />
+    </Key>
+    <Property Name="idEnvironnement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTypeEnvironnement" Type="int" Nullable="false" />
+    <Property Name="idNiveauEnvironnement" Type="int" Nullable="false" />
+    <Property Name="idMusic" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EnvironnementRessource">
+    <Key>
+      <PropertyRef Name="idEnvironnementRessource" />
+    </Key>
+    <Property Name="idEnvironnementRessource" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEnvironnement" Type="int" />
+    <Property Name="idTypeRessource" Type="int" />
+    <Property Name="quantiteRessource" Type="int" />
+  </EntityType>
+  <EntityType Name="Inventaire">
+    <Key>
+      <PropertyRef Name="idInventaire" />
+    </Key>
+    <Property Name="idInventaire" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="quantite" Type="int" Nullable="false" />
+    <Property Name="idJoueur" Type="int" Nullable="false" />
+    <Property Name="idRessource" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Joueur">
+    <Key>
+      <PropertyRef Name="idJoueur" />
+    </Key>
+    <Property Name="idJoueur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pseudoJoueur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="emailJoueur" Type="varchar(max)" Nullable="false" />
+    <Property Name="pwdJoueur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="idNiveauJoueur" Type="int" Nullable="false" />
+    <Property Name="idParametre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Messagerie">
+    <Key>
+      <PropertyRef Name="idMessagerie" />
+    </Key>
+    <Property Name="idMessagerie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="typeMessagerie" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="textMessagerie" Type="varchar(max)" Nullable="false" />
+    <Property Name="idJoueur" Type="int" />
+    <Property Name="idEnvironnement" Type="int" />
+  </EntityType>
+  <EntityType Name="Music">
+    <Key>
+      <PropertyRef Name="idMusic" />
+    </Key>
+    <Property Name="idMusic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cheminMusic" Type="varchar(max)" Nullable="false" />
+    <Property Name="idTypeMusic" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NiveauEnvironnement">
+    <Key>
+      <PropertyRef Name="idNiveauEnvironnement" />
+    </Key>
+    <Property Name="idNiveauEnvironnement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomNiveauEnvironnement" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="model3Dreconstruction" Type="varchar(max)" />
+    <Property Name="niveauEnnemis" Type="int" />
+  </EntityType>
+  <EntityType Name="NiveauJoueur">
+    <Key>
+      <PropertyRef Name="idNiveauJoueur" />
+    </Key>
+    <Property Name="idNiveauJoueur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="gradNiveauJoueur" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="numNiveauJoueur" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Objectif">
+    <Key>
+      <PropertyRef Name="idObjectif" />
+    </Key>
+    <Property Name="idObjectif" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomObjectif" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="texteObjectif" Type="text" Nullable="false" />
+    <Property Name="niveauObjectif" Type="int" />
+    <Property Name="ordreObjectif" Type="int" />
+    <Property Name="IdTypeEnnemi" Type="int" />
+    <Property Name="IdTypeRessource" Type="int" />
+    <Property Name="Quantite" Type="int" Nullable="false" />
+    <Property Name="IdEnvironnement" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Parametre">
+    <Key>
+      <PropertyRef Name="idParametre" />
+    </Key>
+    <Property Name="idParametre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="controleParametre" Type="varchar" MaxLength="50" />
+    <Property Name="niveauMusicParametre" Type="int" />
+  </EntityType>
+  <EntityType Name="ParametreJoueur">
+    <Key>
+      <PropertyRef Name="idParametreJoueur" />
+    </Key>
+    <Property Name="idParametreJoueur" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idJoueur" Type="int" Nullable="false" />
+    <Property Name="idParametre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Partie">
+    <Key>
+      <PropertyRef Name="idPartie" />
+    </Key>
+    <Property Name="idPartie" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="derniereVisitePartie" Type="datetime" />
+    <Property Name="positionPartie" Type="varchar(max)" />
+    <Property Name="enligne" Type="int" />
+    <Property Name="idJoueur" Type="int" />
+    <Property Name="idEnvironnement" Type="int" />
+    <Property Name="idObjectif" Type="int" />
+  </EntityType>
+  <EntityType Name="Ressource">
+    <Key>
+      <PropertyRef Name="idRessource" />
+    </Key>
+    <Property Name="idRessource" Type="int" Nullable="false" />
+    <Property Name="nomRessource" Type="varchar(max)" Nullable="false" />
+    <Property Name="quantiteRessource" Type="int" />
+    <Property Name="idTypeRessource" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SpawnEnnemi">
+    <Key>
+      <PropertyRef Name="idSpawnEnnemi" />
+    </Key>
+    <Property Name="idSpawnEnnemi" Type="int" Nullable="false" />
+    <Property Name="idTypeEnvironnement" Type="int" Nullable="false" />
+    <Property Name="idTypeEnnemi" Type="int" Nullable="false" />
+    <Property Name="nbreEnnemis" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeAeronef">
+    <Key>
+      <PropertyRef Name="idTypeAeronef" />
+    </Key>
+    <Property Name="idTypeAeronef" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomTypeAeronef" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="degatsLasersAeronef" Type="int" />
+    <Property Name="cargaisonMaxAeronef" Type="int" />
+    <Property Name="prixAeronef" Type="int" />
+    <Property Name="blindageMaxAeronef" Type="int" />
+    <Property Name="capaciteCarburantMax" Type="int" />
+    <Property Name="model3dAeronef" Type="varchar(max)" />
+    <Property Name="sonAeronef" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TypeEnnemi">
+    <Key>
+      <PropertyRef Name="idTypeEnnemi" />
+    </Key>
+    <Property Name="idTypeEnnemi" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomTypeEnnemi" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="vieMaxEnnemi" Type="int" Nullable="false" />
+    <Property Name="puissanceTypeEnnemi" Type="int" Nullable="false" />
+    <Property Name="vitesseTypeEnnemi" Type="float" Nullable="false" />
+    <Property Name="idTypeEnvironnement" Type="int" />
+  </EntityType>
+  <EntityType Name="TypeEnvironnement">
+    <Key>
+      <PropertyRef Name="idTypeEnvironnement" />
+    </Key>
+    <Property Name="idTypeEnvironnement" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomTypeEnvironnement" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="solTypeEnvironnement" Type="tinyint" Nullable="false" />
+    <Property Name="cielTypeEnvironnement" Type="tinyint" Nullable="false" />
+    <Property Name="model3DEnvironnement" Type="varchar(max)" />
+    <Property Name="idAmbianceSonore" Type="int" />
+  </EntityType>
+  <EntityType Name="TypeMusic">
+    <Key>
+      <PropertyRef Name="idTypeMusic" />
+    </Key>
+    <Property Name="idTypeMusic" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomTypeMusic" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TypeRessource">
+    <Key>
+      <PropertyRef Name="idTypeRessource" />
+    </Key>
+    <Property Name="idTypeRessource" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nomTypeRessource" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Action__idMusic__5BE2A6F2">
+    <End Role="Music" Type="Self.Music" Multiplicity="1" />
+    <End Role="Actions" Type="Self.Actions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music">
+        <PropertyRef Name="idMusic" />
+      </Principal>
+      <Dependent Role="Actions">
+        <PropertyRef Name="idMusic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Aeronef__idJoueu__47A6A41B">
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="0..1" />
+    <End Role="Aeronef" Type="Self.Aeronef" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joueur">
+        <PropertyRef Name="idJoueur" />
+      </Principal>
+      <Dependent Role="Aeronef">
+        <PropertyRef Name="idJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Aeronef__idTypeA__4F47C5E3">
+    <End Role="TypeAeronef" Type="Self.TypeAeronef" Multiplicity="1" />
+    <End Role="Aeronef" Type="Self.Aeronef" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeAeronef">
+        <PropertyRef Name="idTypeAeronef" />
+      </Principal>
+      <Dependent Role="Aeronef">
+        <PropertyRef Name="idTypeAeronef" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ennemi__idTypeEn__619B8048">
+    <End Role="TypeEnnemi" Type="Self.TypeEnnemi" Multiplicity="1" />
+    <End Role="Ennemi" Type="Self.Ennemi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnnemi">
+        <PropertyRef Name="idTypeEnnemi" />
+      </Principal>
+      <Dependent Role="Ennemi">
+        <PropertyRef Name="idTypeEnnemi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Environne__idEnv__282DF8C2">
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="0..1" />
+    <End Role="EnvironnementRessource" Type="Self.EnvironnementRessource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environnement">
+        <PropertyRef Name="idEnvironnement" />
+      </Principal>
+      <Dependent Role="EnvironnementRessource">
+        <PropertyRef Name="idEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Environne__idMus__6383C8BA">
+    <End Role="Music" Type="Self.Music" Multiplicity="1" />
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music">
+        <PropertyRef Name="idMusic" />
+      </Principal>
+      <Dependent Role="Environnement">
+        <PropertyRef Name="idMusic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Environne__idNiv__656C112C">
+    <End Role="NiveauEnvironnement" Type="Self.NiveauEnvironnement" Multiplicity="1" />
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NiveauEnvironnement">
+        <PropertyRef Name="idNiveauEnvironnement" />
+      </Principal>
+      <Dependent Role="Environnement">
+        <PropertyRef Name="idNiveauEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Environne__idTyp__31B762FC">
+    <End Role="TypeRessource" Type="Self.TypeRessource" Multiplicity="0..1" />
+    <End Role="EnvironnementRessource" Type="Self.EnvironnementRessource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeRessource">
+        <PropertyRef Name="idTypeRessource" />
+      </Principal>
+      <Dependent Role="EnvironnementRessource">
+        <PropertyRef Name="idTypeRessource" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Environne__idTyp__693CA210">
+    <End Role="TypeEnvironnement" Type="Self.TypeEnvironnement" Multiplicity="1" />
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnvironnement">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Principal>
+      <Dependent Role="Environnement">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventair__idJou__6EF57B66">
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="1" />
+    <End Role="Inventaire" Type="Self.Inventaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joueur">
+        <PropertyRef Name="idJoueur" />
+      </Principal>
+      <Dependent Role="Inventaire">
+        <PropertyRef Name="idJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Inventair__idRes__5224328E">
+    <End Role="Ressource" Type="Self.Ressource" Multiplicity="1" />
+    <End Role="Inventaire" Type="Self.Inventaire" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ressource">
+        <PropertyRef Name="idRessource" />
+      </Principal>
+      <Dependent Role="Inventaire">
+        <PropertyRef Name="idRessource" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Joueur__idNiveau__72C60C4A">
+    <End Role="NiveauJoueur" Type="Self.NiveauJoueur" Multiplicity="1" />
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="NiveauJoueur">
+        <PropertyRef Name="idNiveauJoueur" />
+      </Principal>
+      <Dependent Role="Joueur">
+        <PropertyRef Name="idNiveauJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Joueur__idParame__3D2915A8">
+    <End Role="Parametre" Type="Self.Parametre" Multiplicity="1" />
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parametre">
+        <PropertyRef Name="idParametre" />
+      </Principal>
+      <Dependent Role="Joueur">
+        <PropertyRef Name="idParametre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messageri__idEnv__787EE5A0">
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="0..1" />
+    <End Role="Messagerie" Type="Self.Messagerie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environnement">
+        <PropertyRef Name="idEnvironnement" />
+      </Principal>
+      <Dependent Role="Messagerie">
+        <PropertyRef Name="idEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Messageri__idJou__7A672E12">
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="0..1" />
+    <End Role="Messagerie" Type="Self.Messagerie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joueur">
+        <PropertyRef Name="idJoueur" />
+      </Principal>
+      <Dependent Role="Messagerie">
+        <PropertyRef Name="idJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Music__idTypeMus__7C4F7684">
+    <End Role="TypeMusic" Type="Self.TypeMusic" Multiplicity="1" />
+    <End Role="Music" Type="Self.Music" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeMusic">
+        <PropertyRef Name="idTypeMusic" />
+      </Principal>
+      <Dependent Role="Music">
+        <PropertyRef Name="idTypeMusic" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Objectif__IdEnvi__65370702">
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="1" />
+    <End Role="Objectif" Type="Self.Objectif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environnement">
+        <PropertyRef Name="idEnvironnement" />
+      </Principal>
+      <Dependent Role="Objectif">
+        <PropertyRef Name="IdEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Objectif__IdType__625A9A57">
+    <End Role="TypeEnnemi" Type="Self.TypeEnnemi" Multiplicity="0..1" />
+    <End Role="Objectif" Type="Self.Objectif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnnemi">
+        <PropertyRef Name="idTypeEnnemi" />
+      </Principal>
+      <Dependent Role="Objectif">
+        <PropertyRef Name="IdTypeEnnemi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Objectif__IdType__634EBE90">
+    <End Role="TypeRessource" Type="Self.TypeRessource" Multiplicity="0..1" />
+    <End Role="Objectif" Type="Self.Objectif" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeRessource">
+        <PropertyRef Name="idTypeRessource" />
+      </Principal>
+      <Dependent Role="Objectif">
+        <PropertyRef Name="IdTypeRessource" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parametre__idJou__41EDCAC5">
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="1" />
+    <End Role="ParametreJoueur" Type="Self.ParametreJoueur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joueur">
+        <PropertyRef Name="idJoueur" />
+      </Principal>
+      <Dependent Role="ParametreJoueur">
+        <PropertyRef Name="idJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Parametre__idPar__42E1EEFE">
+    <End Role="Parametre" Type="Self.Parametre" Multiplicity="1" />
+    <End Role="ParametreJoueur" Type="Self.ParametreJoueur" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Parametre">
+        <PropertyRef Name="idParametre" />
+      </Principal>
+      <Dependent Role="ParametreJoueur">
+        <PropertyRef Name="idParametre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Partie__idEnviro__46B27FE2">
+    <End Role="Environnement" Type="Self.Environnement" Multiplicity="0..1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Environnement">
+        <PropertyRef Name="idEnvironnement" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="idEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Partie__idJoueur__45BE5BA9">
+    <End Role="Joueur" Type="Self.Joueur" Multiplicity="0..1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Joueur">
+        <PropertyRef Name="idJoueur" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="idJoueur" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Partie__idObject__662B2B3B">
+    <End Role="Objectif" Type="Self.Objectif" Multiplicity="0..1" />
+    <End Role="Partie" Type="Self.Partie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Objectif">
+        <PropertyRef Name="idObjectif" />
+      </Principal>
+      <Dependent Role="Partie">
+        <PropertyRef Name="idObjectif" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ressource__idTyp__74794A92">
+    <End Role="TypeRessource" Type="Self.TypeRessource" Multiplicity="1" />
+    <End Role="Ressource" Type="Self.Ressource" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeRessource">
+        <PropertyRef Name="idTypeRessource" />
+      </Principal>
+      <Dependent Role="Ressource">
+        <PropertyRef Name="idTypeRessource" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SpawnEnne__idTyp__3B40CD36">
+    <End Role="TypeEnvironnement" Type="Self.TypeEnvironnement" Multiplicity="1" />
+    <End Role="SpawnEnnemi" Type="Self.SpawnEnnemi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnvironnement">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Principal>
+      <Dependent Role="SpawnEnnemi">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SpawnEnne__idTyp__3C34F16F">
+    <End Role="TypeEnnemi" Type="Self.TypeEnnemi" Multiplicity="1" />
+    <End Role="SpawnEnnemi" Type="Self.SpawnEnnemi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnnemi">
+        <PropertyRef Name="idTypeEnnemi" />
+      </Principal>
+      <Dependent Role="SpawnEnnemi">
+        <PropertyRef Name="idTypeEnnemi" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TypeEnnem__idTyp__756D6ECB">
+    <End Role="TypeEnvironnement" Type="Self.TypeEnvironnement" Multiplicity="0..1" />
+    <End Role="TypeEnnemi" Type="Self.TypeEnnemi" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeEnvironnement">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Principal>
+      <Dependent Role="TypeEnnemi">
+        <PropertyRef Name="idTypeEnvironnement" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TypeEnvir__idAmb__25518C17">
+    <End Role="Music" Type="Self.Music" Multiplicity="0..1" />
+    <End Role="TypeEnvironnement" Type="Self.TypeEnvironnement" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Music">
+        <PropertyRef Name="idMusic" />
+      </Principal>
+      <Dependent Role="TypeEnvironnement">
+        <PropertyRef Name="idAmbianceSonore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EarthRescueModelStoreContainer">
+    <EntitySet Name="Actions" EntityType="Self.Actions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aeronef" EntityType="Self.Aeronef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ennemi" EntityType="Self.Ennemi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Environnement" EntityType="Self.Environnement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnvironnementRessource" EntityType="Self.EnvironnementRessource" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Inventaire" EntityType="Self.Inventaire" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Joueur" EntityType="Self.Joueur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Messagerie" EntityType="Self.Messagerie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Music" EntityType="Self.Music" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NiveauEnvironnement" EntityType="Self.NiveauEnvironnement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NiveauJoueur" EntityType="Self.NiveauJoueur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Objectif" EntityType="Self.Objectif" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parametre" EntityType="Self.Parametre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ParametreJoueur" EntityType="Self.ParametreJoueur" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Partie" EntityType="Self.Partie" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ressource" EntityType="Self.Ressource" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SpawnEnnemi" EntityType="Self.SpawnEnnemi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeAeronef" EntityType="Self.TypeAeronef" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeEnnemi" EntityType="Self.TypeEnnemi" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeEnvironnement" EntityType="Self.TypeEnvironnement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeMusic" EntityType="Self.TypeMusic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeRessource" EntityType="Self.TypeRessource" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Action__idMusic__5BE2A6F2" Association="Self.FK__Action__idMusic__5BE2A6F2">
+      <End Role="Music" EntitySet="Music" />
+      <End Role="Actions" EntitySet="Actions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Aeronef__idJoueu__47A6A41B" Association="Self.FK__Aeronef__idJoueu__47A6A41B">
+      <End Role="Joueur" EntitySet="Joueur" />
+      <End Role="Aeronef" EntitySet="Aeronef" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Aeronef__idTypeA__4F47C5E3" Association="Self.FK__Aeronef__idTypeA__4F47C5E3">
+      <End Role="TypeAeronef" EntitySet="TypeAeronef" />
+      <End Role="Aeronef" EntitySet="Aeronef" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ennemi__idTypeEn__619B8048" Association="Self.FK__Ennemi__idTypeEn__619B8048">
+      <End Role="TypeEnnemi" EntitySet="TypeEnnemi" />
+      <End Role="Ennemi" EntitySet="Ennemi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Environne__idEnv__282DF8C2" Association="Self.FK__Environne__idEnv__282DF8C2">
+      <End Role="Environnement" EntitySet="Environnement" />
+      <End Role="EnvironnementRessource" EntitySet="EnvironnementRessource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Environne__idMus__6383C8BA" Association="Self.FK__Environne__idMus__6383C8BA">
+      <End Role="Music" EntitySet="Music" />
+      <End Role="Environnement" EntitySet="Environnement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Environne__idNiv__656C112C" Association="Self.FK__Environne__idNiv__656C112C">
+      <End Role="NiveauEnvironnement" EntitySet="NiveauEnvironnement" />
+      <End Role="Environnement" EntitySet="Environnement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Environne__idTyp__31B762FC" Association="Self.FK__Environne__idTyp__31B762FC">
+      <End Role="TypeRessource" EntitySet="TypeRessource" />
+      <End Role="EnvironnementRessource" EntitySet="EnvironnementRessource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Environne__idTyp__693CA210" Association="Self.FK__Environne__idTyp__693CA210">
+      <End Role="TypeEnvironnement" EntitySet="TypeEnvironnement" />
+      <End Role="Environnement" EntitySet="Environnement" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventair__idJou__6EF57B66" Association="Self.FK__Inventair__idJou__6EF57B66">
+      <End Role="Joueur" EntitySet="Joueur" />
+      <End Role="Inventaire" EntitySet="Inventaire" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Inventair__idRes__5224328E" Association="Self.FK__Inventair__idRes__5224328E">
+      <End Role="Ressource" EntitySet="Ressource" />
+      <End Role="Inventaire" EntitySet="Inventaire" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Joueur__idNiveau__72C60C4A" Association="Self.FK__Joueur__idNiveau__72C60C4A">
+      <End Role="NiveauJoueur" EntitySet="NiveauJoueur" />
+      <End Role="Joueur" EntitySet="Joueur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Joueur__idParame__3D2915A8" Association="Self.FK__Joueur__idParame__3D2915A8">
+      <End Role="Parametre" EntitySet="Parametre" />
+      <End Role="Joueur" EntitySet="Joueur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messageri__idEnv__787EE5A0" Association="Self.FK__Messageri__idEnv__787EE5A0">
+      <End Role="Environnement" EntitySet="Environnement" />
+      <End Role="Messagerie" EntitySet="Messagerie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Messageri__idJou__7A672E12" Association="Self.FK__Messageri__idJou__7A672E12">
+      <End Role="Joueur" EntitySet="Joueur" />
+      <End Role="Messagerie" EntitySet="Messagerie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Music__idTypeMus__7C4F7684" Association="Self.FK__Music__idTypeMus__7C4F7684">
+      <End Role="TypeMusic" EntitySet="TypeMusic" />
+      <End Role="Music" EntitySet="Music" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Objectif__IdEnvi__65370702" Association="Self.FK__Objectif__IdEnvi__65370702">
+      <End Role="Environnement" EntitySet="Environnement" />
+      <End Role="Objectif" EntitySet="Objectif" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Objectif__IdType__625A9A57" Association="Self.FK__Objectif__IdType__625A9A57">
+      <End Role="TypeEnnemi" EntitySet="TypeEnnemi" />
+      <End Role="Objectif" EntitySet="Objectif" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Objectif__IdType__634EBE90" Association="Self.FK__Objectif__IdType__634EBE90">
+      <End Role="TypeRessource" EntitySet="TypeRessource" />
+      <End Role="Objectif" EntitySet="Objectif" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parametre__idJou__41EDCAC5" Association="Self.FK__Parametre__idJou__41EDCAC5">
+      <End Role="Joueur" EntitySet="Joueur" />
+      <End Role="ParametreJoueur" EntitySet="ParametreJoueur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Parametre__idPar__42E1EEFE" Association="Self.FK__Parametre__idPar__42E1EEFE">
+      <End Role="Parametre" EntitySet="Parametre" />
+      <End Role="ParametreJoueur" EntitySet="ParametreJoueur" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Partie__idEnviro__46B27FE2" Association="Self.FK__Partie__idEnviro__46B27FE2">
+      <End Role="Environnement" EntitySet="Environnement" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Partie__idJoueur__45BE5BA9" Association="Self.FK__Partie__idJoueur__45BE5BA9">
+      <End Role="Joueur" EntitySet="Joueur" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Partie__idObject__662B2B3B" Association="Self.FK__Partie__idObject__662B2B3B">
+      <End Role="Objectif" EntitySet="Objectif" />
+      <End Role="Partie" EntitySet="Partie" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ressource__idTyp__74794A92" Association="Self.FK__Ressource__idTyp__74794A92">
+      <End Role="TypeRessource" EntitySet="TypeRessource" />
+      <End Role="Ressource" EntitySet="Ressource" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SpawnEnne__idTyp__3B40CD36" Association="Self.FK__SpawnEnne__idTyp__3B40CD36">
+      <End Role="TypeEnvironnement" EntitySet="TypeEnvironnement" />
+      <End Role="SpawnEnnemi" EntitySet="SpawnEnnemi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SpawnEnne__idTyp__3C34F16F" Association="Self.FK__SpawnEnne__idTyp__3C34F16F">
+      <End Role="TypeEnnemi" EntitySet="TypeEnnemi" />
+      <End Role="SpawnEnnemi" EntitySet="SpawnEnnemi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TypeEnnem__idTyp__756D6ECB" Association="Self.FK__TypeEnnem__idTyp__756D6ECB">
+      <End Role="TypeEnvironnement" EntitySet="TypeEnvironnement" />
+      <End Role="TypeEnnemi" EntitySet="TypeEnnemi" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TypeEnvir__idAmb__25518C17" Association="Self.FK__TypeEnvir__idAmb__25518C17">
+      <End Role="Music" EntitySet="Music" />
+      <End Role="TypeEnvironnement" EntitySet="TypeEnvironnement" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
